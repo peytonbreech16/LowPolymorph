@@ -43,8 +43,8 @@ MonoBehaviour:
     y: 0
     width: 202
     height: 741
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -96,8 +96,8 @@ MonoBehaviour:
     y: 30
     width: 1536
     height: 741
-  m_MinSize: {x: 909, y: 271}
-  m_MaxSize: {x: 22004, y: 10021}
+  m_MinSize: {x: 911, y: 271}
+  m_MaxSize: {x: 22006, y: 10021}
   vertical: 1
   controlID: 33
 --- !u!114 &5
@@ -123,8 +123,8 @@ MonoBehaviour:
     y: 0
     width: 1536
     height: 741
-  m_MinSize: {x: 909, y: 271}
-  m_MaxSize: {x: 22004, y: 10021}
+  m_MinSize: {x: 911, y: 271}
+  m_MaxSize: {x: 22006, y: 10021}
   vertical: 0
   controlID: 34
 --- !u!114 &6
@@ -336,7 +336,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -470,7 +470,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Low Poly Assets/RPG Monster Duo PBR Polyart/Prefabs
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
@@ -482,7 +482,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 06340000
     m_LastClickedID: 13318
-    m_ExpandedIDs: 00000000525400005454000056540000585400005a5400005c5400005e54000060540000625400006454000066540000685400006a5400006c5400006e54000070540000725400007454000076540000785400007a540000
+    m_ExpandedIDs: 00000000a0560000a2560000a4560000a6560000a8560000aa560000ac560000ae560000b0560000b2560000b4560000b6560000b8560000ba560000bc560000be560000c0560000c2560000c4560000c6560000c8560000ca560000cc560000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -510,23 +510,23 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000525400005454000056540000585400005a5400005c5400005e54000060540000625400006454000066540000685400006a5400006c5400006e54000070540000725400007454000076540000785400007a540000d854000052560000
+    m_ExpandedIDs: ffffffff00000000a0560000a2560000a4560000a6560000a8560000aa560000ac560000ae560000b0560000b2560000b4560000b6560000b8560000ba560000bc560000be560000c0560000c2560000c4560000c6560000c8560000f2560000085900000a590000ec9300007e45010088450100d4bf0100f4bf0100f0c00100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: TurtleShell
+      m_OriginalName: TurtleShell
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 87974
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 9}
+      m_ClientGUIView: {fileID: 3}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -602,9 +602,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 211.64688, y: -9.344273, z: 248.13852}
+    m_Target: {x: 141.70169, y: -2.3973198, z: 208.19794}
     speed: 2
-    m_Value: {x: 211.64688, y: -9.344273, z: 248.13852}
+    m_Value: {x: 141.70169, y: -2.3973198, z: 208.19794}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -650,13 +650,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.14
   m_Rotation:
-    m_Target: {x: -0.024018595, y: -0.97223306, z: 0.20682423, w: -0.10830421}
+    m_Target: {x: -0.10981466, y: -0.84343326, z: 0.18751678, w: -0.49166948}
     speed: 2
-    m_Value: {x: -0.016379334, y: -0.97129166, z: 0.22808582, w: -0.06558315}
+    m_Value: {x: -0.0946242, y: -0.89435637, z: 0.22440736, w: -0.37525234}
   m_Size:
-    m_Target: 17.320509
+    m_Target: 53.315
     speed: 2
-    m_Value: 17.321093
+    m_Value: 53.318
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -710,20 +710,20 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 7849feff9649fefff84afeff20ddfeff3e66ffff2e76ffff06f0ffff5cf2ffff14f3ffff3cfbffff0a3b00009a3b0000
+      m_SelectedIDs: 54a10100
+      m_LastClickedID: 106836
+      m_ExpandedIDs: 8696feffae13ffff3cfbffffc83b0000323c000096420000a6420000da420000f24200001c440000949d0100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Audio Source
-        m_OriginalName: Audio Source
+        m_Name: Witch Shells
+        m_OriginalName: Witch Shells
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -104238
+        m_UserData: 106836
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
