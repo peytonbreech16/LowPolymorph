@@ -66,3 +66,5 @@ Group-Project/Temp/UnityLockfile
 Group-Project/Library/Artifacts
 *.json
 *.dll
+*.o
+Group-Project/Library/il2cpp_cache/linkresult_663B4A743C150897186B496649F01726/build.bc

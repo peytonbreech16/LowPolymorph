@@ -52,3 +52,13 @@ Update Mode: updateDependencies
 The following packages were updated:
   com.unity.ide.vscode from version 1.1.4 to 1.2.1
   com.unity.test-framework from version 1.1.9 to 1.1.16
+
+=== Mon Nov  9 12:37:06 2020
+
+Packages were changed.
+Update Mode: mergeDefaultDependencies
+
+The following packages were added:
+  com.unity.recorder@2.2.0-preview.4
+The following packages were updated:
+  com.unity.timeline from version 1.2.10 to 1.2.13
