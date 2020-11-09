@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Spells : MonoBehaviour
 {
@@ -49,6 +50,16 @@ public class Spells : MonoBehaviour
             Freeze.transform.position = transform.position + Camera.main.transform.forward * 2;
             Freeze.transform.rotation = Camera.main.transform.rotation;
             
+        }
+        //T key pressed, cast teleport spell to go back home
+        if (Input.GetKeyDown(KeyCode.T)) //&& Time.time > nextFireTeleport)
+        {
+            SceneManager.LoadScene("Inside_Tower");
+        }
+        //B key pressed, cast teleport back to spawn in overworld
+        if (Input.GetKeyDown(KeyCode.B)) //&& Time.time > nextFireTeleport)
+        {
+            SceneManager.LoadScene("AlScene");
         }
     }
 }

@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AlScene.unity
     guid: ef0f41f8ba304274284a3e68c174bdc7
+  - enabled: 1
+    path: Assets/Scenes/Inside_Tower.unity
+    guid: ed87e75a22e264d7282d973c1536c2e0
   m_configObjects: {}
