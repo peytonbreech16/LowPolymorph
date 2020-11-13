@@ -14,6 +14,12 @@ public class Spells : MonoBehaviour
     private float nextFireDispel = 0.5f;
     public float fireRateFreeze = 2f;
     private float nextFireFreeze = 0.5f;
+    public float fireRateTeleport = 90f;
+    private float nextFireTeleport = 0.5f;
+    public Animator flamesCD;
+    public Animator freezeCD;
+    public Animator dispelCD;
+    public Animator teleportCD;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +27,8 @@ public class Spells : MonoBehaviour
         flames = Resources.Load("Flames") as GameObject;
         dispel = Resources.Load("Dispel") as GameObject;
         freeze = Resources.Load("Freeze") as GameObject;
+        nextFireTeleport = Time.time + fireRateTeleport;
+        teleportCD.Play("TeleportCD");
     }
 
     // Update is called once per frame
@@ -29,6 +37,7 @@ public class Spells : MonoBehaviour
         //LMB clicked, cast flames spell
         if (Input.GetMouseButtonDown(0) && Time.time > nextFireFlames)
         {
+            flamesCD.Play("FlamesCD");
             nextFireFlames = Time.time + fireRateFlames;
             GameObject Flames = Instantiate(flames) as GameObject;
             Flames.transform.position = transform.position + Camera.main.transform.forward;
@@ -37,6 +46,7 @@ public class Spells : MonoBehaviour
         //RMB clicked, cast dispel spell
         if (Input.GetMouseButtonDown(1) && Time.time > nextFireDispel)
         {
+            dispelCD.Play("DispelCD");
             nextFireDispel = Time.time + fireRateDispel;
             GameObject Dispel = Instantiate(dispel) as GameObject;
             Dispel.transform.position = transform.position + Camera.main.transform.forward * 5;
@@ -45,6 +55,7 @@ public class Spells : MonoBehaviour
         //F key pressed, cast freeze spell
         if (Input.GetKeyDown(KeyCode.F) && Time.time > nextFireFreeze)
         {
+            freezeCD.Play("FreezeCD");
             nextFireFreeze = Time.time + fireRateFreeze;
             GameObject Freeze = Instantiate(freeze) as GameObject;
             Freeze.transform.position = transform.position + Camera.main.transform.forward * 2;
@@ -52,7 +63,7 @@ public class Spells : MonoBehaviour
             
         }
         //T key pressed, cast teleport spell to go back home
-        if (Input.GetKeyDown(KeyCode.T)) //&& Time.time > nextFireTeleport)
+        if (Input.GetKeyDown(KeyCode.T) && Time.time > nextFireTeleport) //&& Time.time > nextFireTeleport)
         {
             SceneManager.LoadScene("Inside_Tower");
         }
