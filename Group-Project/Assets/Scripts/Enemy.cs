@@ -11,19 +11,23 @@ public class Enemy : MonoBehaviour
     public float howClose;
     public Animator animator;
     public GameObject self;
-    public int health;
+    public float health;
     public bool dead;
+    public GameObject healthBar;
     // Start is called before the first frame update
     void Start()
     {
         nma = this.GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        dead = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (dead)
+        {
+
+        }
         dist = Vector3.Distance(player.position, transform.position);
         //if player leaves enemy chase range
         if (dist > howClose && !dead)
@@ -49,6 +53,7 @@ public class Enemy : MonoBehaviour
             dead = true;
             self.GetComponent<NavMeshAgent>().enabled = false;
             animator.Play("Die");
+            healthBar.SetActive(false);
         }
     }
 }

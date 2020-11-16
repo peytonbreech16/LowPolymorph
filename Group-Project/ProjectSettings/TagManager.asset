@@ -12,6 +12,8 @@ TagManager:
   - Enemy
   - Dead
   - Animal
+  - Slimes
+  - Shells
   layers:
   - Default
   - TransparentFX

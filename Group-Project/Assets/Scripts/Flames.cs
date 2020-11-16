@@ -18,12 +18,20 @@ public class Flames : MonoBehaviour
     //Collision for the flames spell to register on enemies.
     private void OnParticleCollision(GameObject other) 
     {
-        if (other.tag == "Enemy")
+        if (other.tag == "Slimes")
         {
             animator = other.GetComponent<Animator>();
             //animator.SetBool("Chasing", false);
             //animator.SetBool("Attacking", false);
-            other.GetComponent<Enemy>().health -= 1;
+            other.GetComponent<Enemy>().health -= 0.01f;
+        }
+
+        if (other.tag == "Shells")
+        {
+            animator = other.GetComponent<Animator>();
+            //animator.SetBool("Chasing", false);
+            //animator.SetBool("Attacking", false);
+            other.GetComponent<Enemy>().health -= 0.005f;
         }
     }
 }
