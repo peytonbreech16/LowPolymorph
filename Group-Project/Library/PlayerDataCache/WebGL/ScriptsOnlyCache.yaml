@@ -3,11 +3,20 @@ ScriptsOnlyBuild:
     Assembly-CSharp-firstpass.dll:
     - UnityStandardAssets.Characters.FirstPerson.FirstPersonController
     Assembly-CSharp.dll:
+    - Animals
+    - Attack
     - CFX_AutoDestructShuriken
     - DigitalRuby.PyroParticles.FireBaseScript
+    - Dispel
+    - Enemy
+    - EnemyGameUI
     - Flames
+    - GameManager
+    - GameUI
     - PlaySFX
+    - Player
     - Spells
+    - StartOver
     Unity.Postprocessing.Runtime.dll:
     - UnityEngine.Rendering.PostProcessing.AmbientOcclusion
     - UnityEngine.Rendering.PostProcessing.AutoExposure
@@ -24,8 +33,16 @@ ScriptsOnlyBuild:
     - UnityEngine.Rendering.PostProcessing.PostProcessVolume
     - UnityEngine.Rendering.PostProcessing.ScreenSpaceReflections
     - UnityEngine.Rendering.PostProcessing.Vignette
+    Unity.ProBuilder.dll:
+    - UnityEngine.ProBuilder.PolyShape
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -33,9 +50,10 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
-    - UnityEngine.UI.Outline
+    - UnityEngine.UI.Image
     - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/AlScene.unity:
@@ -56,8 +74,6 @@ ScriptsOnlyBuild:
     - Class: 43
       Script: {instanceID: 0}
     - Class: 48
-      Script: {instanceID: 0}
-    - Class: 49
       Script: {instanceID: 0}
     - Class: 54
       Script: {instanceID: 0}
@@ -88,56 +104,66 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11386}
-    - Class: 114
       Script: {instanceID: 11398}
     - Class: 114
       Script: {instanceID: 11426}
     - Class: 114
-      Script: {instanceID: 11450}
+      Script: {instanceID: 11452}
     - Class: 114
-      Script: {instanceID: 11460}
+      Script: {instanceID: 11462}
     - Class: 114
-      Script: {instanceID: 11530}
+      Script: {instanceID: 11534}
     - Class: 114
-      Script: {instanceID: 11630}
+      Script: {instanceID: 11634}
     - Class: 114
-      Script: {instanceID: 11642}
+      Script: {instanceID: 11646}
     - Class: 114
-      Script: {instanceID: 12040}
+      Script: {instanceID: 11852}
     - Class: 114
-      Script: {instanceID: 12054}
+      Script: {instanceID: 11916}
     - Class: 114
-      Script: {instanceID: 12094}
+      Script: {instanceID: 12062}
     - Class: 114
-      Script: {instanceID: 12582}
+      Script: {instanceID: 12104}
     - Class: 114
-      Script: {instanceID: 12804}
+      Script: {instanceID: 12138}
     - Class: 114
-      Script: {instanceID: 12880}
+      Script: {instanceID: 12358}
     - Class: 114
-      Script: {instanceID: 12908}
+      Script: {instanceID: 12606}
     - Class: 114
-      Script: {instanceID: 13146}
+      Script: {instanceID: 12834}
     - Class: 114
-      Script: {instanceID: 13158}
+      Script: {instanceID: 12938}
     - Class: 114
-      Script: {instanceID: 14328}
+      Script: {instanceID: 13164}
     - Class: 114
-      Script: {instanceID: 14838}
+      Script: {instanceID: 13182}
     - Class: 114
-      Script: {instanceID: 14856}
+      Script: {instanceID: 13194}
     - Class: 114
-      Script: {instanceID: 14916}
+      Script: {instanceID: 13196}
     - Class: 114
-      Script: {instanceID: 14958}
+      Script: {instanceID: 13346}
     - Class: 114
-      Script: {instanceID: 15060}
+      Script: {instanceID: 13678}
+    - Class: 114
+      Script: {instanceID: 14394}
+    - Class: 114
+      Script: {instanceID: 14914}
+    - Class: 114
+      Script: {instanceID: 14932}
+    - Class: 114
+      Script: {instanceID: 14992}
+    - Class: 114
+      Script: {instanceID: 15088}
+    - Class: 114
+      Script: {instanceID: 15138}
+    - Class: 114
+      Script: {instanceID: 20588}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
-      Script: {instanceID: 0}
-    - Class: 128
       Script: {instanceID: 0}
     - Class: 135
       Script: {instanceID: 0}
@@ -153,11 +179,17 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
+    - Class: 195
+      Script: {instanceID: 0}
     - Class: 196
       Script: {instanceID: 0}
     - Class: 198
       Script: {instanceID: 0}
     - Class: 199
+      Script: {instanceID: 0}
+    - Class: 205
+      Script: {instanceID: 0}
+    - Class: 213
       Script: {instanceID: 0}
     - Class: 218
       Script: {instanceID: 0}
@@ -167,7 +199,58 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
+    - Class: 238
+      Script: {instanceID: 0}
     - Class: 1953259897
+      Script: {instanceID: 0}
+    Assets/Scenes/GameOver.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11386}
+    - Class: 114
+      Script: {instanceID: 11388}
+    - Class: 114
+      Script: {instanceID: 11426}
+    - Class: 114
+      Script: {instanceID: 11852}
+    - Class: 114
+      Script: {instanceID: 12606}
+    - Class: 114
+      Script: {instanceID: 13174}
+    - Class: 114
+      Script: {instanceID: 14394}
+    - Class: 114
+      Script: {instanceID: 15138}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
     Assets/Scenes/Inside_Tower.unity:
     - Class: 1
@@ -187,6 +270,8 @@ ScriptsOnlyBuild:
     - Class: 43
       Script: {instanceID: 0}
     - Class: 48
+      Script: {instanceID: 0}
+    - Class: 49
       Script: {instanceID: 0}
     - Class: 54
       Script: {instanceID: 0}
@@ -213,31 +298,37 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11398}
     - Class: 114
-      Script: {instanceID: 11450}
+      Script: {instanceID: 11452}
     - Class: 114
-      Script: {instanceID: 11460}
+      Script: {instanceID: 11462}
     - Class: 114
-      Script: {instanceID: 11530}
+      Script: {instanceID: 11534}
     - Class: 114
-      Script: {instanceID: 11630}
+      Script: {instanceID: 11634}
     - Class: 114
-      Script: {instanceID: 11642}
+      Script: {instanceID: 11646}
     - Class: 114
-      Script: {instanceID: 12054}
+      Script: {instanceID: 12048}
     - Class: 114
-      Script: {instanceID: 12094}
+      Script: {instanceID: 12062}
     - Class: 114
-      Script: {instanceID: 12804}
+      Script: {instanceID: 12104}
     - Class: 114
-      Script: {instanceID: 13146}
+      Script: {instanceID: 12834}
     - Class: 114
-      Script: {instanceID: 13158}
+      Script: {instanceID: 12910}
     - Class: 114
-      Script: {instanceID: 14838}
+      Script: {instanceID: 13182}
     - Class: 114
-      Script: {instanceID: 14856}
+      Script: {instanceID: 13196}
     - Class: 114
-      Script: {instanceID: 14916}
+      Script: {instanceID: 13896}
+    - Class: 114
+      Script: {instanceID: 14914}
+    - Class: 114
+      Script: {instanceID: 14932}
+    - Class: 114
+      Script: {instanceID: 14992}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -253,6 +344,8 @@ ScriptsOnlyBuild:
     - Class: 198
       Script: {instanceID: 0}
     - Class: 199
+      Script: {instanceID: 0}
+    - Class: 205
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -335,7 +428,7 @@ ScriptsOnlyBuild:
     className: TMP_Dropdown
   - hash:
       serializedVersion: 2
-      Hash: 56e8113be3b09a265ad4adf66575b031
+      Hash: 852835d6556293f02261471d8c7cfb7a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Spells
@@ -509,7 +602,7 @@ ScriptsOnlyBuild:
     className: SignalAsset
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: b86b6fa2eb31f0af2697b4aba6748544
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Flames
@@ -543,6 +636,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.Utility
     className: TimedObjectActivator
+  - hash:
+      serializedVersion: 2
+      Hash: 1658d08614150a7f25b68fa42885c49f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameManager
   - hash:
       serializedVersion: 2
       Hash: 05655f7deb066a961c41619ac9e98263
@@ -603,6 +702,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.Cameras
     className: ProtectCameraFromWallClip
+  - hash:
+      serializedVersion: 2
+      Hash: be7c58ece932a007a8001107d96fa9b9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Attack
   - hash:
       serializedVersion: 2
       Hash: 303da015e9d1de9fdb27bbc2ba279ebd
@@ -821,10 +926,28 @@ ScriptsOnlyBuild:
     className: SmoothFollow
   - hash:
       serializedVersion: 2
+      Hash: 40939602f54319329a697db97cd15b96
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameUI
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: StartOver
+  - hash:
+      serializedVersion: 2
       Hash: 5d27c6e85ec89cfab8577e9e26695e88
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CFX_AutoDestructShuriken
+  - hash:
+      serializedVersion: 2
+      Hash: 893ff65679502984837885448e67b4e6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Animals
   - hash:
       serializedVersion: 2
       Hash: d6fc8d3165070298511ec776ea575626
@@ -879,6 +1002,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: UnityStandardAssets.Effects
     className: AfterburnerPhysicsForce
+  - hash:
+      serializedVersion: 2
+      Hash: 63f3e8ebf833d31ef41c1cd7d3e55562
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnemyGameUI
   - hash:
       serializedVersion: 2
       Hash: 660deb0ce569359218f0ba85b7ce0e3a
@@ -953,6 +1082,12 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
+      Hash: c4e17c1f6352497cc7f8ce6fe59ea046
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Player
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1017,6 +1152,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_FontAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Dispel
   - hash:
       serializedVersion: 2
       Hash: e1300922cc039f41ab46a47f4cb05898
@@ -1265,6 +1406,12 @@ ScriptsOnlyBuild:
     className: TMP_SubMesh
   - hash:
       serializedVersion: 2
+      Hash: adfc94ba959cafb8bbad99606dd2f40a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Enemy
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestRunner.Utils
@@ -1325,6 +1472,7 @@ ScriptsOnlyBuild:
     className: AutoMobileShaderSwitch
   platform: 20
   scenePathNames:
-  - Assets/Scenes/AlScene.unity
   - Assets/Scenes/Inside_Tower.unity
-  playerPath: C:/Users/alyss/OneDrive/Documents/GitHub/LevelDesign-GroupProject/Group-Project/Builds/WebGL
+  - Assets/Scenes/AlScene.unity
+  - Assets/Scenes/GameOver.unity
+  playerPath: C:/Users/alyss/OneDrive/Documents/GitHub/LevelDesign-GroupProject/Group-Project/Builds/LowPolymorphWeb
