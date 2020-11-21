@@ -14,16 +14,40 @@ public class Enemy : MonoBehaviour
     public float health;
     public bool dead;
     public GameObject healthBar;
+
+    GameObject oozedeath;
+    GameObject shelldeath;
+    GameObject oozeattack;
+    GameObject shellattack;
+
+    bool deathSFX = false;
+    bool attackSFX = false;
+    public float timeRemaining = 5;
+
     // Start is called before the first frame update
     void Start()
     {
         nma = this.GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        oozedeath = Resources.Load("Oozedeath") as GameObject;
+        shelldeath = Resources.Load("Shelldeath") as GameObject;
+        oozeattack = Resources.Load("Oozeattack") as GameObject;
+        shellattack = Resources.Load("Shellattack") as GameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (timeRemaining > 0 && attackSFX)
+        {
+            timeRemaining -= Time.deltaTime;
+        }
+        if (timeRemaining <= 0)
+        {
+            attackSFX = false;
+            timeRemaining = 5;
+        }
+
         if (dead)
         {
 
@@ -47,6 +71,12 @@ public class Enemy : MonoBehaviour
             //do damage
             animator.SetBool("Attacking", true);
             //animator.SetBool("Chasing", true);
+
+            if (!attackSFX)
+            {
+                GameObject Oozeattack = Instantiate(oozeattack) as GameObject;
+                attackSFX = true;
+            }
         }
         if (health <= 0)
         {
@@ -54,6 +84,12 @@ public class Enemy : MonoBehaviour
             self.GetComponent<NavMeshAgent>().enabled = false;
             animator.Play("Die");
             healthBar.SetActive(false);
+
+            if (!deathSFX)
+            {
+                GameObject Oozedeath = Instantiate(oozedeath) as GameObject;
+                deathSFX = true;
+            }
         }
     }
 }

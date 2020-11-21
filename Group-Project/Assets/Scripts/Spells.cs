@@ -21,6 +21,12 @@ public class Spells : MonoBehaviour
     public Animator dispelCD;
     public Animator teleportCD;
 
+    public AudioSource flamesSource;
+    public AudioClip iceSFX;
+    public AudioClip dispelSFX;
+    public AudioClip[] flameSFXArray;
+    private int clipIndex;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +43,7 @@ public class Spells : MonoBehaviour
         //LMB clicked, cast flames spell
         if (Input.GetMouseButtonDown(0) && Time.time > nextFireFlames)
         {
+            PlayFireRoundRobin();
             flamesCD.Play("FlamesCD");
             nextFireFlames = Time.time + fireRateFlames;
             GameObject Flames = Instantiate(flames) as GameObject;
@@ -47,6 +54,7 @@ public class Spells : MonoBehaviour
         if (Input.GetMouseButtonDown(1) && Time.time > nextFireDispel)
         {
             dispelCD.Play("DispelCD");
+            flamesSource.PlayOneShot(dispelSFX);
             nextFireDispel = Time.time + fireRateDispel;
             GameObject Dispel = Instantiate(dispel) as GameObject;
             Dispel.transform.position = transform.position + Camera.main.transform.forward * 5;
@@ -56,6 +64,7 @@ public class Spells : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && Time.time > nextFireFreeze)
         {
             freezeCD.Play("FreezeCD");
+            flamesSource.PlayOneShot(iceSFX);
             nextFireFreeze = Time.time + fireRateFreeze;
             // GameObject Freeze = Instantiate(freeze) as GameObject;
             // Freeze.transform.position = transform.position + Camera.main.transform.forward * 2;
@@ -67,10 +76,28 @@ public class Spells : MonoBehaviour
         {
             SceneManager.LoadScene("Inside_Tower");
         }
+
         //B key pressed, cast teleport back to spawn in overworld
         if (Input.GetKeyDown(KeyCode.B)) //&& Time.time > nextFireTeleport)
         {
             SceneManager.LoadScene("AlScene");
+        }
+    }
+
+    void PlayFireRoundRobin()
+    {
+
+        if (clipIndex < flameSFXArray.Length)
+        {
+            flamesSource.PlayOneShot(flameSFXArray[clipIndex]);
+            clipIndex++;
+        }
+
+        else
+        {
+            clipIndex = 0;
+            flamesSource.PlayOneShot(flameSFXArray[clipIndex]);
+            clipIndex++;
         }
     }
 }

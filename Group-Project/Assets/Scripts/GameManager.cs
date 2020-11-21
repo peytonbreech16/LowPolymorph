@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public GameObject [] enemies = new GameObject [0];
     public static bool [] enemyDead = new bool [24];
     public GameObject gate;
+    public GameObject gateAmbient;
+    public GameObject gateSFX;
     // Start is called before the first frame update
     void Start()
     {
@@ -73,7 +75,9 @@ public class GameManager : MonoBehaviour
         //if all 3 animals dipselled, open gate
         if (animalsDispelled[0] && animalsDispelled[1] && animalsDispelled[2])
         {
+            gateAmbient.SetActive(false);
             gate.SetActive(false);
+            gateSFX.SetActive(true);
         }
     }
 }

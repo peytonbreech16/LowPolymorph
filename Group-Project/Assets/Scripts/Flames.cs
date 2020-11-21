@@ -7,6 +7,7 @@ public class Flames : MonoBehaviour
 {
     private Animator animator;
     public GameObject slime;
+
     void Start() 
     {
 
@@ -34,4 +35,5 @@ public class Flames : MonoBehaviour
             other.GetComponent<Enemy>().health -= 0.005f;
         }
     }
+
 }
