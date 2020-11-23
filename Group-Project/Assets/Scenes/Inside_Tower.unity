@@ -140,9 +140,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
-  reset: 0
+  game: {fileID: 0}
   touchingDoor: 0
   exitText: {fileID: 1523443476}
+  reset: 0
+  deathDuration: 1
 --- !u!4 &56879 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0,
@@ -11518,7 +11520,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 3020a4aee8f37466bb03212122f61186, type: 3}
     m_FontSize: 31
     m_FontStyle: 0
     m_BestFit: 0
