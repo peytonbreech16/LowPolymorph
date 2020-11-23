@@ -76,12 +76,6 @@ public class Spells : MonoBehaviour
         {
             SceneManager.LoadScene("Inside_Tower");
         }
-
-        //B key pressed, cast teleport back to spawn in overworld
-        if (Input.GetKeyDown(KeyCode.B)) //&& Time.time > nextFireTeleport)
-        {
-            SceneManager.LoadScene("Overworld");
-        }
     }
 
     void PlayFireRoundRobin()

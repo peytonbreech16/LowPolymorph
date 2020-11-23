@@ -41,5 +41,16 @@ public class Freeze : MonoBehaviour
             animator.SetBool("Attacking", false);
             animator.Play("ShellFreeze");
         }
+
+        if (other.tag == "Boss")
+        {
+            enemy = other.GetComponent<Enemy>();
+            enemy.frozen = true;
+            other.GetComponent<NavMeshAgent>().enabled = false;
+            animator = other.GetComponentInChildren<Animator>();
+            animator.SetBool("Chasing", false);
+            animator.SetBool("Attacking", false);
+            animator.Play("BossFreeze");
+        }
     }
 }

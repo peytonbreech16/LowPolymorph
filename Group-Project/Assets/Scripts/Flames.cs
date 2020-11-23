@@ -34,6 +34,14 @@ public class Flames : MonoBehaviour
             //animator.SetBool("Attacking", false);
             other.GetComponent<Enemy>().health -= 0.005f;
         }
+
+        if (other.tag == "Boss")
+        {
+            animator = other.GetComponent<Animator>();
+            //animator.SetBool("Chasing", false);
+            //animator.SetBool("Attacking", false);
+            other.GetComponent<Enemy>().health -= 0.0025f;
+        }
     }
 
 }

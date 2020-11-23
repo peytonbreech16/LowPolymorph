@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class GameManager : MonoBehaviour
     public GameObject gate;
     public GameObject gateAmbient;
     public GameObject gateSFX;
+    public Boss boss;
+    public float bossDuration = 3;
     // Start is called before the first frame update
     void Start()
     {
@@ -104,6 +107,15 @@ public class GameManager : MonoBehaviour
             gateAmbient.SetActive(false);
             gate.SetActive(false);
             gateSFX.SetActive(true);
+        }
+
+        if (boss.dispelled)
+        {
+            bossDuration -= Time.deltaTime;
+            if (bossDuration <= 0)
+            {
+                SceneManager.LoadScene("Win Screen");
+            }
         }
 
         //Check if game is reset

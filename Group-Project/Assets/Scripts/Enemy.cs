@@ -71,6 +71,7 @@ public class Enemy : MonoBehaviour
         if (dist > howClose && !dead)
         {
             //nma.SetDestination()
+            animator.SetBool("Chasing", false);
         }
         //if player enters enemy chase range, chase player
         if (dist <= howClose && !dead && !frozen)
@@ -96,7 +97,6 @@ public class Enemy : MonoBehaviour
         {
             dead = true;
             self.GetComponent<NavMeshAgent>().enabled = false;
-            self.GetComponent<BoxCollider>().enabled = false;
             animator.Play("Die");
             healthBar.SetActive(false);
 
