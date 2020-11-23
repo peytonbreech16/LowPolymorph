@@ -21957,7 +21957,7 @@ MonoBehaviour:
   fireRateFlames: 2.5
   fireRateDispel: 5
   fireRateFreeze: 10
-  fireRateTeleport: 1
+  fireRateTeleport: 90
   flamesCD: {fileID: 863923898}
   freezeCD: {fileID: 2056514311}
   dispelCD: {fileID: 603650937}
