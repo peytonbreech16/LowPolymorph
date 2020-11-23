@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     public GameObject self;
     public float health;
     public bool dead;
+    public bool frozen;
     public GameObject healthBar;
 
     GameObject oozedeath;
@@ -23,6 +24,7 @@ public class Enemy : MonoBehaviour
     bool deathSFX = false;
     bool attackSFX = false;
     public float timeRemaining = 5;
+    public float frozenDuration = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +40,18 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if frozen by Freeze spell
+        if (frozen)
+        {
+            frozenDuration -= Time.deltaTime;
+            if (frozenDuration <= 0)
+            {
+                frozen = false;
+                nma.enabled = true;
+                frozenDuration = 3;
+            }
+        }
+
         if (timeRemaining > 0 && attackSFX)
         {
             timeRemaining -= Time.deltaTime;
@@ -59,14 +73,14 @@ public class Enemy : MonoBehaviour
             //nma.SetDestination()
         }
         //if player enters enemy chase range, chase player
-        if (dist <= howClose && !dead)
+        if (dist <= howClose && !dead && !frozen)
         {
             animator.SetBool("Attacking", false);
             animator.SetBool("Chasing", true);
             nma.SetDestination(player.transform.position);
         }
         //if enemy is within melee range, then attack
-        if (dist <= 3f && !dead)
+        if (dist <= 3f && !dead && !frozen)
         {
             //do damage
             animator.SetBool("Attacking", true);
@@ -82,6 +96,7 @@ public class Enemy : MonoBehaviour
         {
             dead = true;
             self.GetComponent<NavMeshAgent>().enabled = false;
+            self.GetComponent<BoxCollider>().enabled = false;
             animator.Play("Die");
             healthBar.SetActive(false);
 

@@ -8,27 +8,53 @@ public class GameManager : MonoBehaviour
     public static bool [] animalsDispelled = new bool [3];
     public GameObject [] enemies = new GameObject [0];
     public static bool [] enemyDead = new bool [24];
+    public static bool gameReset;
+    public Player player;
     public GameObject gate;
     public GameObject gateAmbient;
     public GameObject gateSFX;
     // Start is called before the first frame update
     void Start()
     {
-        //Check what enemies are already dead
-        for (int i = 0; i < enemies.Length; i++)
+        gameReset = player.reset;
+        if (!gameReset)
         {
-            if (enemyDead[i])
+            //Check what enemies are already dead
+            for (int i = 0; i < enemies.Length; i++)
             {
-                enemies[i].SetActive(false);
+                if (enemyDead[i])
+                {
+                    enemies[i].SetActive(false);
+                }
+            }
+
+            //Check what animals have been dispelled
+            for (int i = 0; i < animals.Length; i++)
+            {
+                if (animalsDispelled[i])
+                {
+                    animals[i].SetActive(false);
+                }
             }
         }
-
-        //Check what animals have been dispelled
-        for (int i = 0; i < animals.Length; i++)
+        else
         {
-            if (animalsDispelled[i])
+            //Check what enemies are already dead
+            for (int i = 0; i < enemies.Length; i++)
             {
-                animals[i].SetActive(false);
+                if (enemyDead[i])
+                {
+                    enemies[i].SetActive(true);
+                }
+            }
+
+            //Check what animals have been dispelled
+            for (int i = 0; i < animals.Length; i++)
+            {
+                if (animalsDispelled[i])
+                {
+                    animals[i].SetActive(true);
+                }
             }
         }
     }
@@ -79,5 +105,8 @@ public class GameManager : MonoBehaviour
             gate.SetActive(false);
             gateSFX.SetActive(true);
         }
+
+        //Check if game is reset
+        gameReset = player.reset;
     }
 }

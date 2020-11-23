@@ -1,0 +1,45 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.AI;
+
+public class Freeze : MonoBehaviour
+{
+    private Animator animator;
+    public GameObject slime;
+    Enemy enemy;
+
+    void Start() 
+    {
+
+    }
+    void Update() 
+    {
+
+    }
+    //Collision for the flames spell to register on enemies.
+    private void OnParticleCollision(GameObject other) 
+    {
+        if (other.tag == "Slimes")
+        {
+            enemy = other.GetComponent<Enemy>();
+            enemy.frozen = true;
+            other.GetComponent<NavMeshAgent>().enabled = false;
+            animator = other.GetComponent<Animator>();
+            animator.SetBool("Chasing", false);
+            animator.SetBool("Attacking", false);
+            animator.Play("SlimeFreeze");
+        }
+
+        if (other.tag == "Shells")
+        {
+            enemy = other.GetComponent<Enemy>();
+            enemy.frozen = true;
+            other.GetComponent<NavMeshAgent>().enabled = false;
+            animator = other.GetComponent<Animator>();
+            animator.SetBool("Chasing", false);
+            animator.SetBool("Attacking", false);
+            animator.Play("ShellFreeze");
+        }
+    }
+}

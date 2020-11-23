@@ -66,9 +66,9 @@ public class Spells : MonoBehaviour
             freezeCD.Play("FreezeCD");
             flamesSource.PlayOneShot(iceSFX);
             nextFireFreeze = Time.time + fireRateFreeze;
-            // GameObject Freeze = Instantiate(freeze) as GameObject;
-            // Freeze.transform.position = transform.position + Camera.main.transform.forward * 2;
-            // Freeze.transform.rotation = Camera.main.transform.rotation;
+            GameObject Freeze = Instantiate(freeze) as GameObject;
+            Freeze.transform.position = transform.position + Camera.main.transform.forward; //* 5;
+            Freeze.transform.rotation = Camera.main.transform.rotation;
             
         }
         //T key pressed, cast teleport spell to go back home
@@ -80,7 +80,7 @@ public class Spells : MonoBehaviour
         //B key pressed, cast teleport back to spawn in overworld
         if (Input.GetKeyDown(KeyCode.B)) //&& Time.time > nextFireTeleport)
         {
-            SceneManager.LoadScene("AlScene");
+            SceneManager.LoadScene("Overworld");
         }
     }
 

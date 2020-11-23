@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class StartOver : MonoBehaviour
 {
+    public Player player;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,11 +15,10 @@ public class StartOver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    public void startOver()
-    {
-        SceneManager.LoadScene("AlScene");
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            player.reset = true;
+            SceneManager.LoadScene("Overworld");
+        }
     }
 }
