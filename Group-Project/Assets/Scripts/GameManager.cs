@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public static bool [] enemyDead = new bool [24];
     public GameObject [] mages = new GameObject [3];
     public static bool gameReset;
+    public bool gateb = false;
     public Player player;
     public GameObject gate;
     public GameObject gateAmbient;
@@ -66,9 +67,7 @@ public class GameManager : MonoBehaviour
             //if all 3 animals dipselled, open gate
             if (animalsDispelled[0] && animalsDispelled[1] && animalsDispelled[2])
             {
-                gateAmbient.SetActive(false);
-                gate.SetActive(false);
-                gateSFX.SetActive(true);
+                gateb = true;
             }
 
             if (boss.dispelled)
@@ -84,6 +83,16 @@ public class GameManager : MonoBehaviour
                     Reset();
                 }
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player") && gateb)
+        {
+            gateAmbient.SetActive(false);
+            gate.SetActive(false);
+            gateSFX.SetActive(true);
         }
     }
 
