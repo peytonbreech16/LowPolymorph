@@ -6,13 +6,16 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     public float health = 1f;
-    public bool reset = false;
+    public GameManager game;
     public bool touchingDoor;
     public GameObject exitText;
+    public bool reset;
+    public float deathDuration = 1;
     // Start is called before the first frame update
     void Start()
     {
         touchingDoor = false;
+        reset = false;
     }
 
     // Update is called once per frame
@@ -22,7 +25,12 @@ public class Player : MonoBehaviour
         if (health <= 0)
         {
             reset = true;
-            SceneManager.LoadScene("GameOver");
+            game.Reset();
+            deathDuration -= Time.deltaTime;
+            if (deathDuration <= 0)
+            {
+                SceneManager.LoadScene("GameOver");
+            }
         }
 
         //if player is touching tower door
@@ -33,14 +41,6 @@ public class Player : MonoBehaviour
                 SceneManager.LoadScene("Overworld");
             }
         }
-        /*
-        //Player wins
-        if (winCondition)
-        {
-            reset = true;
-            SceneManager.LoadScene("WinScreen");
-        }
-        */
     }
 
     //if touching tower door

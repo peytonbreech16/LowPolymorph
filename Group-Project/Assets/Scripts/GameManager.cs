@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public static bool [] animalsDispelled = new bool [3];
     public GameObject [] enemies = new GameObject [0];
     public static bool [] enemyDead = new bool [24];
+    public GameObject [] mages = new GameObject [3];
     public static bool gameReset;
     public Player player;
     public GameObject gate;
@@ -19,45 +20,22 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameReset = player.reset;
-        if (!gameReset)
+        //Check what enemies are already dead
+        for (int i = 0; i < enemies.Length; i++)
         {
-            //Check what enemies are already dead
-            for (int i = 0; i < enemies.Length; i++)
+            if (enemyDead[i])
             {
-                if (enemyDead[i])
-                {
-                    enemies[i].SetActive(false);
-                }
-            }
-
-            //Check what animals have been dispelled
-            for (int i = 0; i < animals.Length; i++)
-            {
-                if (animalsDispelled[i])
-                {
-                    animals[i].SetActive(false);
-                }
+                enemies[i].SetActive(false);
             }
         }
-        else
-        {
-            //Check what enemies are already dead
-            for (int i = 0; i < enemies.Length; i++)
-            {
-                if (enemyDead[i])
-                {
-                    enemies[i].SetActive(true);
-                }
-            }
 
-            //Check what animals have been dispelled
-            for (int i = 0; i < animals.Length; i++)
+        //Check what animals have been dispelled
+        for (int i = 0; i < animals.Length; i++)
+        {
+            if (animalsDispelled[i])
             {
-                if (animalsDispelled[i])
-                {
-                    animals[i].SetActive(true);
-                }
+                animals[i].SetActive(false);
+                mages[i].SetActive(true);
             }
         }
     }
@@ -65,60 +43,88 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if enemy dies, set their global dead value to true so they do not respawn
+        if (!player.reset)
+        {
+            //if enemy dies, set their global dead value to true so they do not respawn
+            for (int i = 0; i < enemies.Length; i++)
+            {
+                if (enemies[i].GetComponent<Enemy>().dead)
+                {
+                    enemyDead[i] = true;
+                }
+            }
+
+            //if animal has been dispelled, set their global dispelled avlue to true so they do not respawn
+            for (int i = 0; i < animals.Length; i++)
+            {
+                if (animals[i].GetComponent<Animals>().dispelled)
+                {
+                    animalsDispelled[i] = true;
+                }
+            }
+
+            //if all 3 animals dipselled, open gate
+            if (animalsDispelled[0] && animalsDispelled[1] && animalsDispelled[2])
+            {
+                gateAmbient.SetActive(false);
+                gate.SetActive(false);
+                gateSFX.SetActive(true);
+            }
+
+            if (boss.dispelled)
+            {
+                bossDuration -= Time.deltaTime;
+                if (bossDuration <= 0)
+                {
+                    SceneManager.LoadScene("Win Screen");
+                }
+
+                else if (bossDuration <= 1)
+                {
+                    Reset();
+                }
+            }
+        }
+    }
+
+    //reset all static variables such as wizards being dispelled and enemies that were slain
+    public void Reset()
+    {
         for (int i = 0; i < enemies.Length; i++)
         {
             if (enemies[i].GetComponent<Enemy>().dead)
             {
-                enemyDead[i] = true;
+                enemyDead[i] = false;
+                enemies[i].GetComponent<Enemy>().dead = false;
             }
         }
 
-        //if animal has been dispelled, set their global dispelled avlue to true so they do not respawn
         for (int i = 0; i < animals.Length; i++)
         {
             if (animals[i].GetComponent<Animals>().dispelled)
             {
-                animalsDispelled[i] = true;
+                animalsDispelled[i] = false;
+                animals[i].GetComponent<Animals>().dispelled = false;
             }
         }
 
-        //if animal 0 dispelled, wizard goes to rock
-        if (animalsDispelled[0])
+        //Check what enemies are already dead
+        for (int i = 0; i < enemies.Length; i++)
         {
-            //wizard doing ritual animation
-        }
-
-        //if animal 1 dispelled, wizard goes to rock
-        if (animalsDispelled[1])
-        {
-            //wizard doing ritual animation
-        }
-
-        //if animal 2 dispelled, wizard goes to rock
-        if (animalsDispelled[2])
-        {
-            //wizard doing ritual animation
-        }
-        
-        //if all 3 animals dipselled, open gate
-        if (animalsDispelled[0] && animalsDispelled[1] && animalsDispelled[2])
-        {
-            gateAmbient.SetActive(false);
-            gate.SetActive(false);
-            gateSFX.SetActive(true);
-        }
-
-        if (boss.dispelled)
-        {
-            bossDuration -= Time.deltaTime;
-            if (bossDuration <= 0)
+            if (!enemyDead[i])
             {
-                SceneManager.LoadScene("Win Screen");
+                enemies[i].SetActive(true);
             }
         }
 
-        //Check if game is reset
-        gameReset = player.reset;
+        //Check what animals have been dispelled
+        for (int i = 0; i < animals.Length; i++)
+        {
+            if (!animalsDispelled[i])
+            {
+                animals[i].SetActive(true);
+                mages[i].SetActive(false);
+            }
+        }
     }
 }

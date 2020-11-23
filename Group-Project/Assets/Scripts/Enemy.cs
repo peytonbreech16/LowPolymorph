@@ -10,7 +10,6 @@ public class Enemy : MonoBehaviour
     private Transform player;
     public float howClose;
     public Animator animator;
-    public GameObject self;
     public float health;
     public bool dead;
     public bool frozen;
@@ -96,7 +95,7 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             dead = true;
-            self.GetComponent<NavMeshAgent>().enabled = false;
+            this.GetComponent<NavMeshAgent>().enabled = false;
             animator.Play("Die");
             healthBar.SetActive(false);
 
