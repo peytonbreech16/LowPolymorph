@@ -6,11 +6,11 @@ using UnityEngine.AI;
 public class Mages : MonoBehaviour
 {
     NavMeshAgent nma = null;
-    public float mageDuration = 3;
     public float walkDuration = 10;
     public Transform goal;
     public bool destinationReached;
     Animator animator;
+    public Dialogue dialogue;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,19 +22,17 @@ public class Mages : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!destinationReached)
+        if (!destinationReached && dialogue.startWalking)
         {
-            mageDuration -= Time.deltaTime;
-            if (mageDuration <= 0)
+            animator.SetBool("startWalking", true);
+            nma.destination = goal.position;
+            walkDuration -= Time.deltaTime;
+            if (walkDuration <= 0)
             {
-                nma.destination = goal.position;
-                walkDuration -= Time.deltaTime;
-                if (walkDuration <= 0)
-                {
-                    animator.Play("Praying");
-                    nma.enabled = false;
-                    destinationReached = true;
-                }
+                animator.Play("Praying");
+                nma.enabled = false;
+                destinationReached = true;
+                
             }
         }
     }

@@ -20,7 +20,7 @@ public class Freeze : MonoBehaviour
     //Collision for the flames spell to register on enemies.
     private void OnParticleCollision(GameObject other) 
     {
-        if (other.tag == "Slimes")
+        if (other.tag == "Slimes" && !enemy.dead)
         {
             enemy = other.GetComponent<Enemy>();
             enemy.frozen = true;
@@ -31,7 +31,7 @@ public class Freeze : MonoBehaviour
             animator.Play("SlimeFreeze");
         }
 
-        if (other.tag == "Shells")
+        if (other.tag == "Shells" && !enemy.dead)
         {
             enemy = other.GetComponent<Enemy>();
             enemy.frozen = true;
@@ -42,7 +42,7 @@ public class Freeze : MonoBehaviour
             animator.Play("ShellFreeze");
         }
 
-        if (other.tag == "Boss")
+        if (other.tag == "Boss" && !enemy.dead)
         {
             enemy = other.GetComponent<Enemy>();
             enemy.frozen = true;

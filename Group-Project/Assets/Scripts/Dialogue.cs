@@ -6,16 +6,18 @@ using UnityEngine.UI;
 public class Dialogue : MonoBehaviour
 {
     public GameObject interactText;
-    bool interactyn = false;
+    public bool interactyn = false;
     public GameObject TextBox;
     public GameObject UIUI;
-    bool dialogueActive = false;
+    public bool dialogueActive = false;
     public Text dialogue;
     public string Name;
     public Text characterName;
+    public bool startWalking = false;
 
     public string[] sentences;
     public int currentSentence;
+    public Collider collider;
 
     private void Update()
     {
@@ -26,15 +28,16 @@ public class Dialogue : MonoBehaviour
             dialogueActive = interactyn;
         }
 
-        dialogue.text = sentences[currentSentence];
-        characterName.text = Name;
-        interactText.SetActive(interactyn);
-
         if (currentSentence >= sentences.Length)
         {
+            startWalking = true;
             dialogueActive = false;
             currentSentence = 0;
         }
+
+        dialogue.text = sentences[currentSentence];
+        characterName.text = Name;
+        interactText.SetActive(interactyn);
 
 
         if (!dialogueActive)
@@ -64,6 +67,10 @@ public class Dialogue : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            if (startWalking)
+            {
+                collider.enabled = false;
+            }
             dialogueActive = false;
             interactyn = false;
         }
