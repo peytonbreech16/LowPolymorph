@@ -11,7 +11,7 @@ Cmd: preprocessCompute
 Cmd: preprocess
   insize=1431 outsize=378 ok=1
 Cmd: preprocess
-  insize=2591 outsize=734 ok=1
+  insize=2492 outsize=699 ok=1
 Cmd: preprocessCompute
   insize=1220 outsize=1226 ok=1
 Cmd: preprocess
@@ -35,7 +35,7 @@ Cmd: preprocess
 Cmd: preprocessCompute
   insize=5024 outsize=5032 ok=1
 Cmd: preprocess
-  insize=21062 outsize=16636 ok=1
+  insize=20713 outsize=16414 ok=1
 Cmd: preprocessCompute
   insize=1858 outsize=1864 ok=1
 Cmd: preprocess
@@ -99,7 +99,7 @@ Cmd: preprocess
 Cmd: preprocess
   insize=2371 outsize=667 ok=1
 Cmd: preprocess
-  insize=2425 outsize=1075 ok=1
+  insize=2320 outsize=1027 ok=1
 Cmd: preprocess
   insize=12338 outsize=1048 ok=1
 Cmd: preprocess
@@ -125,7 +125,7 @@ Cmd: preprocess
 Cmd: preprocessCompute
   insize=3526 outsize=3532 ok=1
 Cmd: preprocess
-  insize=2464 outsize=1146 ok=1
+  insize=2462 outsize=1144 ok=1
 Cmd: preprocess
   insize=1826 outsize=593 ok=1
 Cmd: preprocess
@@ -133,11 +133,11 @@ Cmd: preprocess
 Cmd: preprocessCompute
   insize=3168 outsize=3174 ok=1
 Cmd: preprocess
-  insize=1012 outsize=306 ok=1
+  insize=954 outsize=288 ok=1
 Cmd: preprocess
-  insize=815 outsize=815 ok=1
+  insize=775 outsize=775 ok=1
 Cmd: preprocess
-  insize=2464 outsize=1140 ok=1
+  insize=2357 outsize=1088 ok=1
 Cmd: preprocess
   insize=3219 outsize=322 ok=1
 Cmd: preprocessCompute
@@ -166,7 +166,3 @@ Cmd: preprocess
   insize=887 outsize=313 ok=1
 Cmd: preprocess
   insize=23137 outsize=1613 ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=1460 outsize=1710 kw=UNITY_PASS_FORWARDADD DIRECTIONAL FOG_LINEAR pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=1460 outsize=3586 kw=UNITY_PASS_FORWARDADD DIRECTIONAL FOG_LINEAR pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1
