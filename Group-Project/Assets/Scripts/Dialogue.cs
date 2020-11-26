@@ -19,12 +19,16 @@ public class Dialogue : MonoBehaviour
     public int currentSentence;
     public Collider collider;
 
+    public AudioSource a_AudioSource;
+    public AudioClip voiceActing;
+
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && interactyn)
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            TextBox.SetActive(true);
-            UIUI.SetActive(false);
+            TextBox.SetActive(interactyn);
+            UIUI.SetActive(!interactyn);
             dialogueActive = interactyn;
         }
 
@@ -50,10 +54,19 @@ public class Dialogue : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.E)) && dialogueActive == true)
         {
             currentSentence++;
+            a_AudioSource.PlayOneShot(voiceActing);
             Debug.Log("The E key was pressed.");
         }
     }
 
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            interactyn = true;
+        }
+    }
 
     private void OnTriggerStay(Collider other)
     {

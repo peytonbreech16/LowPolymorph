@@ -16,6 +16,7 @@ TagManager:
   - Shells
   - Door
   - Boss
+  - Ritual
   layers:
   - Default
   - TransparentFX

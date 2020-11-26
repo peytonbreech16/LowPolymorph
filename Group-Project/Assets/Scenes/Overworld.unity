@@ -6165,6 +6165,8 @@ MonoBehaviour:
   - Farewell and good luck.
   currentSentence: 0
   collider: {fileID: 285151494}
+  a_AudioSource: {fileID: 2088184686}
+  voiceActing: {fileID: 8300000, guid: 00ec4f68ead06474ab6519209f0a31ab, type: 3}
 --- !u!135 &285151494
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8401,12 +8403,14 @@ MonoBehaviour:
   sentences:
   - ...
   - ............................
-  - ................. Oh, really? There's a ward blocking us from Roundrock?
+  - ................. Oh, really? You heard a loud noise?
   - No, I was aslep when that all happened.
   - Warding wall? Haven't seen one around... it took long enough to walk here as
     is.
   currentSentence: 0
   collider: {fileID: 336190201}
+  a_AudioSource: {fileID: 2088184686}
+  voiceActing: {fileID: 8300000, guid: 423729eeaa64a2b42b49551775a20754, type: 3}
 --- !u!135 &336190201
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8418,7 +8422,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3
+  m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &336190673
 GameObject:
@@ -12817,9 +12821,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 428425612}
+  - component: {fileID: 428425613}
+  - component: {fileID: 428425614}
   m_Layer: 0
   m_Name: Ritual Door
-  m_TagString: Untagged
+  m_TagString: Ritual
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12843,6 +12849,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &428425613
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428425611}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 15
+  m_Center: {x: -3.24, y: 0, z: 1.5}
+--- !u!114 &428425614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428425611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91672470f157f7c4187cd3c4b8615e8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactText: {fileID: 0}
+  interactyn: 0
+  TextBox: {fileID: 1224360708}
+  UIUI: {fileID: 987476192}
+  dialogueActive: 0
+  dialogue: {fileID: 94697883}
+  Name: 
+  characterName: {fileID: 0}
+  startWalking: 0
+  sentences:
+  - 'Leland Iora: Good, everyone is here. Are we ready?'
+  - 'Agate von Merle: Yes.'
+  - 'Rose Artuga: Yeah!'
+  - 'Rose Artuga: Oh, I forgot to tell you all, I saw more oozes coming up this way.'
+  - 'Agate von Merle: I would have loved for you to mention that before we took down
+    the barrier.'
+  - 'Rose Artuga: You just love putting barriers between us, Agate.'
+  - 'Agate von Merle: ...'
+  - 'Leland Iora: Reagan!'
+  - 'Leland Iora: The three of us are going to remain here to replace the door, if
+    we must. Please, go make sure the village is safe. '
+  currentSentence: 0
+  collider: {fileID: 428425613}
+  a_AudioSource: {fileID: 2088184686}
+  voiceActing: {fileID: 0}
 --- !u!1 &429807892
 GameObject:
   m_ObjectHideFlags: 0
@@ -21256,6 +21312,7 @@ GameObject:
   m_Component:
   - component: {fileID: 577923071}
   - component: {fileID: 585416985}
+  - component: {fileID: 578241138}
   m_Layer: 0
   m_Name: BossHuman
   m_TagString: Untagged
@@ -21263,6 +21320,32 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!114 &578241138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578241137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91672470f157f7c4187cd3c4b8615e8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactText: {fileID: 645452033}
+  interactyn: 0
+  TextBox: {fileID: 1224360708}
+  UIUI: {fileID: 987476192}
+  dialogueActive: 0
+  dialogue: {fileID: 94697883}
+  Name: Mortimer Drabek
+  characterName: {fileID: 1257655724}
+  startWalking: 0
+  sentences: []
+  currentSentence: 0
+  collider: {fileID: 0}
+  a_AudioSource: {fileID: 2088184686}
+  voiceActing: {fileID: 8300000, guid: bdf50d5dabd7b004f8a3c6a8bb0e08a3, type: 3}
 --- !u!1 &578242765
 GameObject:
   m_ObjectHideFlags: 0
@@ -39602,6 +39685,8 @@ MonoBehaviour:
     too trong for one person to disple. Find the others.
   currentSentence: 0
   collider: {fileID: 1370028714}
+  a_AudioSource: {fileID: 2088184686}
+  voiceActing: {fileID: 8300000, guid: de58673e3b8755c41a5d812dfb543f6f, type: 3}
 --- !u!135 &1370028714
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -39613,7 +39698,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3
+  m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1370029534
 GameObject:
@@ -54741,7 +54826,7 @@ GameObject:
   - component: {fileID: 2088184687}
   - component: {fileID: 2088184686}
   m_Layer: 0
-  m_Name: FireSFX
+  m_Name: SFXSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57037,6 +57122,8 @@ MonoBehaviour:
   sentences: []
   currentSentence: 0
   collider: {fileID: 0}
+  a_AudioSource: {fileID: 0}
+  voiceActing: {fileID: 0}
 --- !u!135 &767162384154787356
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -59946,6 +60033,8 @@ MonoBehaviour:
   sentences: []
   currentSentence: 0
   collider: {fileID: 0}
+  a_AudioSource: {fileID: 0}
+  voiceActing: {fileID: 0}
 --- !u!135 &5694035044108189055
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -62575,6 +62664,8 @@ MonoBehaviour:
   sentences: []
   currentSentence: 0
   collider: {fileID: 0}
+  a_AudioSource: {fileID: 0}
+  voiceActing: {fileID: 0}
 --- !u!135 &6983251198300848904
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -68640,6 +68731,8 @@ MonoBehaviour:
   sentences: []
   currentSentence: 0
   collider: {fileID: 0}
+  a_AudioSource: {fileID: 0}
+  voiceActing: {fileID: 0}
 --- !u!135 &7979175605573651723
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -69958,6 +70051,8 @@ MonoBehaviour:
   sentences: []
   currentSentence: 0
   collider: {fileID: 0}
+  a_AudioSource: {fileID: 0}
+  voiceActing: {fileID: 0}
 --- !u!135 &8547764589606668712
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -73547,6 +73642,8 @@ MonoBehaviour:
   sentences: []
   currentSentence: 0
   collider: {fileID: 0}
+  a_AudioSource: {fileID: 0}
+  voiceActing: {fileID: 0}
 --- !u!135 &9035052587144279693
 SphereCollider:
   m_ObjectHideFlags: 0
