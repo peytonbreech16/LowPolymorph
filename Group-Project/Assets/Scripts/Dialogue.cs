@@ -27,6 +27,7 @@ public class Dialogue : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
+            Debug.Log("I'm not setting Dialogue active 3");
             TextBox.SetActive(interactyn);
             UIUI.SetActive(!interactyn);
             dialogueActive = interactyn;
@@ -34,22 +35,17 @@ public class Dialogue : MonoBehaviour
 
         if (currentSentence >= sentences.Length)
         {
+            Debug.Log("I'm not setting Dialogue active 2");
             startWalking = true;
             dialogueActive = false;
             currentSentence = 0;
+            UIUI.SetActive(true);
+            TextBox.SetActive(false);
         }
 
         dialogue.text = sentences[currentSentence];
         characterName.text = Name;
         interactText.SetActive(interactyn);
-
-
-        if (!dialogueActive)
-        {
-            UIUI.SetActive(true);
-            TextBox.SetActive(false);
-        }
-
 
         if ((Input.GetKeyDown(KeyCode.E)) && dialogueActive == true)
         {
@@ -84,6 +80,9 @@ public class Dialogue : MonoBehaviour
             {
                 collider.enabled = false;
             }
+            
+            UIUI.SetActive(true);
+            TextBox.SetActive(false);
             dialogueActive = false;
             interactyn = false;
         }
