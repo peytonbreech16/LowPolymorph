@@ -3450,7 +3450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1837317425425208, guid: 3aec22b5d3f3c2947bb81040b56e5f96, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4882590064214274, guid: 3aec22b5d3f3c2947bb81040b56e5f96, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8353,7 +8353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 941b9bcc767a45746a563b10096f5590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkDuration: 53
+  walkDuration: 42
   goal: {fileID: 1465222089}
   destinationReached: 0
   dialogue: {fileID: 336190200}
@@ -12874,14 +12874,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91672470f157f7c4187cd3c4b8615e8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactText: {fileID: 0}
+  interactText: {fileID: 436883957}
   interactyn: 0
   TextBox: {fileID: 1224360708}
   UIUI: {fileID: 987476192}
   dialogueActive: 0
   dialogue: {fileID: 94697883}
   Name: 
-  characterName: {fileID: 0}
+  characterName: {fileID: 436883958}
   startWalking: 0
   sentences:
   - 'Leland Iora: Good, everyone is here. Are we ready?'
@@ -17011,6 +17011,84 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 432069712}
   m_Mesh: {fileID: 4300000, guid: d265bb418a3d9574aaa5e7500d619208, type: 3}
+--- !u!1 &436883957
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 436883960}
+  - component: {fileID: 436883959}
+  - component: {fileID: 436883958}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &436883958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436883957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: " \n"
+--- !u!222 &436883959
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436883957}
+  m_CullTransparentMesh: 0
+--- !u!224 &436883960
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436883957}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1712637982}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &438098201
 GameObject:
   m_ObjectHideFlags: 0
@@ -21312,7 +21390,6 @@ GameObject:
   m_Component:
   - component: {fileID: 577923071}
   - component: {fileID: 585416985}
-  - component: {fileID: 578241138}
   m_Layer: 0
   m_Name: BossHuman
   m_TagString: Untagged
@@ -21320,32 +21397,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &578241138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 578241137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91672470f157f7c4187cd3c4b8615e8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactText: {fileID: 645452033}
-  interactyn: 0
-  TextBox: {fileID: 1224360708}
-  UIUI: {fileID: 987476192}
-  dialogueActive: 0
-  dialogue: {fileID: 94697883}
-  Name: Mortimer Drabek
-  characterName: {fileID: 1257655724}
-  startWalking: 0
-  sentences: []
-  currentSentence: 0
-  collider: {fileID: 0}
-  a_AudioSource: {fileID: 2088184686}
-  voiceActing: {fileID: 8300000, guid: bdf50d5dabd7b004f8a3c6a8bb0e08a3, type: 3}
 --- !u!1 &578242765
 GameObject:
   m_ObjectHideFlags: 0
@@ -29744,7 +29795,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1837317425425208, guid: 3aec22b5d3f3c2947bb81040b56e5f96, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4882590064214274, guid: 3aec22b5d3f3c2947bb81040b56e5f96, type: 3}
       propertyPath: m_LocalPosition.x
@@ -36439,7 +36490,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 226.5
+      value: 307.24
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -36447,7 +36498,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 210.8
+      value: 188.46
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalRotation.x
@@ -39628,7 +39679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 941b9bcc767a45746a563b10096f5590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkDuration: 41
+  walkDuration: 36
   goal: {fileID: 410328461}
   destinationReached: 0
   dialogue: {fileID: 1370028713}
@@ -49107,6 +49158,7 @@ RectTransform:
   - {fileID: 987476193}
   - {fileID: 645452034}
   - {fileID: 1639561173}
+  - {fileID: 436883960}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -57089,7 +57141,6 @@ GameObject:
   m_Component:
   - component: {fileID: 767162384154596484}
   - component: {fileID: 767162384145289694}
-  - component: {fileID: 767162384154787355}
   - component: {fileID: 767162384154787356}
   m_Layer: 0
   m_Name: PeasantF2
@@ -57098,32 +57149,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &767162384154787355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 767162384154787354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91672470f157f7c4187cd3c4b8615e8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactText: {fileID: 645452033}
-  interactyn: 0
-  TextBox: {fileID: 1224360708}
-  UIUI: {fileID: 0}
-  dialogueActive: 0
-  dialogue: {fileID: 94697883}
-  Name: 
-  characterName: {fileID: 0}
-  startWalking: 0
-  sentences: []
-  currentSentence: 0
-  collider: {fileID: 0}
-  a_AudioSource: {fileID: 0}
-  voiceActing: {fileID: 0}
 --- !u!135 &767162384154787356
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -60000,7 +60025,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5694035044108495017}
   - component: {fileID: 5694035044098769313}
-  - component: {fileID: 5694035044108189054}
   - component: {fileID: 5694035044108189055}
   m_Layer: 0
   m_Name: Character_Male_Baird_01
@@ -60009,32 +60033,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &5694035044108189054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5694035044108189053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91672470f157f7c4187cd3c4b8615e8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactText: {fileID: 645452033}
-  interactyn: 0
-  TextBox: {fileID: 1224360708}
-  UIUI: {fileID: 0}
-  dialogueActive: 0
-  dialogue: {fileID: 94697883}
-  Name: 
-  characterName: {fileID: 0}
-  startWalking: 0
-  sentences: []
-  currentSentence: 0
-  collider: {fileID: 0}
-  a_AudioSource: {fileID: 0}
-  voiceActing: {fileID: 0}
 --- !u!135 &5694035044108189055
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -62631,7 +62629,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6983251198301070022}
   - component: {fileID: 6983251198310145990}
-  - component: {fileID: 6983251198300848903}
   - component: {fileID: 6983251198300848904}
   m_Layer: 0
   m_Name: Character_Male_Peasant_01
@@ -62640,32 +62637,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &6983251198300848903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6983251198300848902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91672470f157f7c4187cd3c4b8615e8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactText: {fileID: 645452033}
-  interactyn: 0
-  TextBox: {fileID: 1224360708}
-  UIUI: {fileID: 0}
-  dialogueActive: 0
-  dialogue: {fileID: 94697883}
-  Name: 
-  characterName: {fileID: 0}
-  startWalking: 0
-  sentences: []
-  currentSentence: 0
-  collider: {fileID: 0}
-  a_AudioSource: {fileID: 0}
-  voiceActing: {fileID: 0}
 --- !u!135 &6983251198300848904
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -68698,7 +68669,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7979175605573344097}
   - component: {fileID: 7979175605566336893}
-  - component: {fileID: 7979175605573651722}
   - component: {fileID: 7979175605573651723}
   m_Layer: 0
   m_Name: PeasantF1
@@ -68707,32 +68677,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &7979175605573651722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7979175605573651721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91672470f157f7c4187cd3c4b8615e8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactText: {fileID: 645452033}
-  interactyn: 0
-  TextBox: {fileID: 1224360708}
-  UIUI: {fileID: 0}
-  dialogueActive: 0
-  dialogue: {fileID: 94697883}
-  Name: 
-  characterName: {fileID: 0}
-  startWalking: 0
-  sentences: []
-  currentSentence: 0
-  collider: {fileID: 0}
-  a_AudioSource: {fileID: 0}
-  voiceActing: {fileID: 0}
 --- !u!135 &7979175605573651723
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -70018,7 +69962,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8547764589606889574}
   - component: {fileID: 8547764589615961446}
-  - component: {fileID: 8547764589606668711}
   - component: {fileID: 8547764589606668712}
   m_Layer: 0
   m_Name: PeasantM
@@ -70027,32 +69970,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &8547764589606668711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8547764589606668710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91672470f157f7c4187cd3c4b8615e8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactText: {fileID: 645452033}
-  interactyn: 0
-  TextBox: {fileID: 1224360708}
-  UIUI: {fileID: 0}
-  dialogueActive: 0
-  dialogue: {fileID: 94697883}
-  Name: 
-  characterName: {fileID: 0}
-  startWalking: 0
-  sentences: []
-  currentSentence: 0
-  collider: {fileID: 0}
-  a_AudioSource: {fileID: 0}
-  voiceActing: {fileID: 0}
 --- !u!135 &8547764589606668712
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -73609,7 +73526,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9035052587144082851}
   - component: {fileID: 9035052587134817857}
-  - component: {fileID: 9035052587144279692}
   - component: {fileID: 9035052587144279693}
   m_Layer: 0
   m_Name: RogueM
@@ -73618,32 +73534,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &9035052587144279692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9035052587144279691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91672470f157f7c4187cd3c4b8615e8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactText: {fileID: 645452033}
-  interactyn: 0
-  TextBox: {fileID: 1224360708}
-  UIUI: {fileID: 0}
-  dialogueActive: 0
-  dialogue: {fileID: 94697883}
-  Name: 
-  characterName: {fileID: 0}
-  startWalking: 0
-  sentences: []
-  currentSentence: 0
-  collider: {fileID: 0}
-  a_AudioSource: {fileID: 0}
-  voiceActing: {fileID: 0}
 --- !u!135 &9035052587144279693
 SphereCollider:
   m_ObjectHideFlags: 0

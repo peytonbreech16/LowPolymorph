@@ -27,7 +27,6 @@ public class Dialogue : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("I'm not setting Dialogue active 3");
             TextBox.SetActive(interactyn);
             UIUI.SetActive(!interactyn);
             dialogueActive = interactyn;
@@ -35,7 +34,6 @@ public class Dialogue : MonoBehaviour
 
         if (currentSentence >= sentences.Length)
         {
-            Debug.Log("I'm not setting Dialogue active 2");
             startWalking = true;
             dialogueActive = false;
             currentSentence = 0;
