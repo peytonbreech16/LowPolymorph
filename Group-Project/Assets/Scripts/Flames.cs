@@ -27,7 +27,7 @@ public class Flames : MonoBehaviour
             animator = other.GetComponent<Animator>();
             //animator.SetBool("Chasing", false);
             //animator.SetBool("Attacking", false);
-            other.GetComponent<Enemy>().health -= 0.01f;
+            other.GetComponent<Enemy>().health -= 0.02f;
         }
 
         if (other.tag == "Shells")
@@ -36,7 +36,7 @@ public class Flames : MonoBehaviour
             animator = other.GetComponent<Animator>();
             //animator.SetBool("Chasing", false);
             //animator.SetBool("Attacking", false);
-            other.GetComponent<Enemy>().health -= 0.005f;
+            other.GetComponent<Enemy>().health -= 0.01f;
         }
 
         if (other.tag == "Boss")
@@ -45,7 +45,7 @@ public class Flames : MonoBehaviour
             animator = other.GetComponent<Animator>();
             //animator.SetBool("Chasing", false);
             //animator.SetBool("Attacking", false);
-            other.GetComponent<Enemy>().health -= 0.0025f;
+            other.GetComponent<Enemy>().health -= 0.005f;
         }
     }
 
