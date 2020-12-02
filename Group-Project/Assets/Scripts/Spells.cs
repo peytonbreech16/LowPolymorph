@@ -50,8 +50,8 @@ public class Spells : MonoBehaviour
             Flames.transform.position = transform.position + Camera.main.transform.forward;
             Flames.transform.rotation = Camera.main.transform.rotation;
         }
-        //RMB clicked, cast dispel spell
-        if (Input.GetMouseButtonDown(1) && Time.time > nextFireDispel)
+        //D clicked, cast dispel spell
+        if (Input.GetKeyDown(KeyCode.D) && Time.time > nextFireDispel)
         {
             dispelCD.Play("DispelCD");
             flamesSource.PlayOneShot(dispelSFX);
@@ -60,8 +60,8 @@ public class Spells : MonoBehaviour
             Dispel.transform.position = transform.position + Camera.main.transform.forward * 5;
             Dispel.transform.rotation = Camera.main.transform.rotation;
         }
-        //F key pressed, cast freeze spell
-        if (Input.GetKeyDown(KeyCode.F) && Time.time > nextFireFreeze)
+        //RMB key pressed, cast freeze spell
+        if (Input.GetMouseButtonDown(1) && Time.time > nextFireFreeze)
         {
             freezeCD.Play("FreezeCD");
             flamesSource.PlayOneShot(iceSFX);
