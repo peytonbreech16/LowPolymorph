@@ -51,7 +51,7 @@ public class Spells : MonoBehaviour
             Flames.transform.rotation = Camera.main.transform.rotation;
         }
         //D clicked, cast dispel spell
-        if (Input.GetKeyDown(KeyCode.D) && Time.time > nextFireDispel)
+        if (Input.GetKeyDown(KeyCode.R) && Time.time > nextFireDispel)
         {
             dispelCD.Play("DispelCD");
             flamesSource.PlayOneShot(dispelSFX);

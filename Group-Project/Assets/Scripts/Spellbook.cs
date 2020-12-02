@@ -20,6 +20,10 @@ public class Spellbook : MonoBehaviour
                 interactText.SetActive(false);
             }
         }
+        if (!nearby && SpellbookUI.activeInHierarchy == true)
+        {
+            SpellbookUI.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

@@ -8,21 +8,16 @@ public class Freeze : MonoBehaviour
     private Animator animator;
     public GameObject slime;
     Enemy enemy;
+    public AudioSource damageAudioSource;
+    public AudioClip iceDamageSFX;
 
-    void Start() 
-    {
-
-    }
-    void Update() 
-    {
-
-    }
     //Collision for the flames spell to register on enemies.
     private void OnParticleCollision(GameObject other) 
     {
         enemy = other.GetComponent<Enemy>();
         if (other.tag == "Slimes" && !enemy.dead)
         {
+            damageAudioSource.PlayOneShot(iceDamageSFX);
             enemy.frozen = true;
             other.GetComponent<NavMeshAgent>().enabled = false;
             animator = other.GetComponent<Animator>();
@@ -33,6 +28,7 @@ public class Freeze : MonoBehaviour
 
         if (other.tag == "Shells" && !enemy.dead)
         {
+            damageAudioSource.PlayOneShot(iceDamageSFX);
             enemy = other.GetComponent<Enemy>();
             enemy.frozen = true;
             other.GetComponent<NavMeshAgent>().enabled = false;
@@ -44,6 +40,7 @@ public class Freeze : MonoBehaviour
 
         if (other.tag == "Boss" && !enemy.dead)
         {
+            damageAudioSource.PlayOneShot(iceDamageSFX);
             enemy = other.GetComponent<Enemy>();
             enemy.frozen = true;
             other.GetComponent<NavMeshAgent>().enabled = false;

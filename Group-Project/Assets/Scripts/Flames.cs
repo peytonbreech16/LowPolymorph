@@ -7,6 +7,8 @@ public class Flames : MonoBehaviour
 {
     private Animator animator;
     public GameObject slime;
+    public AudioSource damageAudioSource;
+    public AudioClip flameDamageSFX;
 
     void Start() 
     {
@@ -21,6 +23,7 @@ public class Flames : MonoBehaviour
     {
         if (other.tag == "Slimes")
         {
+            damageAudioSource.PlayOneShot(flameDamageSFX);
             animator = other.GetComponent<Animator>();
             //animator.SetBool("Chasing", false);
             //animator.SetBool("Attacking", false);
@@ -29,6 +32,7 @@ public class Flames : MonoBehaviour
 
         if (other.tag == "Shells")
         {
+            damageAudioSource.PlayOneShot(flameDamageSFX);
             animator = other.GetComponent<Animator>();
             //animator.SetBool("Chasing", false);
             //animator.SetBool("Attacking", false);
@@ -37,6 +41,7 @@ public class Flames : MonoBehaviour
 
         if (other.tag == "Boss")
         {
+            damageAudioSource.PlayOneShot(flameDamageSFX);
             animator = other.GetComponent<Animator>();
             //animator.SetBool("Chasing", false);
             //animator.SetBool("Attacking", false);

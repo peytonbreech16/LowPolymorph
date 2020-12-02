@@ -5,11 +5,16 @@ using UnityEngine;
 public class Attack : StateMachineBehaviour
 {
     public float damage = 0.1f;
+    public AudioSource damageAudioSource;
+    public AudioClip DamageSFX;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       GameObject player = GameObject.Find("Player");
-       player.GetComponent<Player>().health -= damage;
+        GameObject soundFX = GameObject.Find("SFXSource");
+        damageAudioSource = soundFX.GetComponent<AudioSource>();
+        damageAudioSource.PlayOneShot(DamageSFX);
+        GameObject player = GameObject.Find("Player");
+        player.GetComponent<Player>().health -= damage;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
